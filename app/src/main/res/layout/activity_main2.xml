@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Main2Activity">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#000000"
+        android:text="我们接着学习一个比较重要的动画实现类--ObjectAnimator。该类作为ValueAnimator的子类不仅继承了ValueAnimator的所有方法和特性，并且还封装很多实用的方法，方便开发人员快速实现动画。同时，由于属性值会自动更新，使用ObjectAnimator实现动画不需要像ValueAnimator那样必须实现 ValueAnimator.AnimatorUpdateListener ，因此实现任意对象的动画显示就更加容易了。我们在大部分的开发工作中，都会使用ObjectAnimator而非ValueAnimator实现我们所需的动画效果。
+     前几篇博文我们都介绍了View Animation,我们了解了其实现View对象动画的特点，即View Animation本身是通过改变View的绘制方式来实现动画的，View对象本身的属性值并没有改变，对象仍然停留在原始位置。那Android为了消除这一弊病，在 Android 3.0 中给 View 增加了一些新的属性以及相应的 getter、setter 方法。Property Animation系统可以通过修改 View 对象实际的属性值来实现屏幕上的动画效果。此外，当属性值发生变化时，Views 也会自动调用 invalidate() 方法来刷新屏幕。 View 类中新增的便于实现 property 动画的属性包括：
+     (1) translationX 和 translationY：这两个属性控制着 View 的屏幕位置坐标变化量，以 layout 容器的左上角为坐标原点;
+     (2) rotation、rotationX 和 rotationY：这三个属性控制着 2D 旋转角度（rotation属性）和围绕某枢轴点的 3D 旋转角度;
+     (3) scaleX、scaleY：这两个属性控制着 View 围绕某枢轴点的 2D 缩放比例;
+     (4) pivotX 和 pivotY: 这两个属性控制着枢轴点的位置，前述的旋转和缩放都是以此点为中心展开的,缺省的枢轴点是 View 对象的中心点;
+     (5) x 和 y：这是指 View 在容器内的最终位置，等于 View 左上角相对于容器的坐标加上 translationX 和 translationY 后的值;
+     (6)alpha：表示 View 的 alpha 透明度。缺省值为 1 （不透明），为 0 则表示完全透明（看不见）;
+要动画显示 View 对象的某个属性，比如颜色或旋转值，我们所有要做的事情就是创建一个 Property animation，并设定对应的 View 属性。那接下来我们就用ObjectAnimator类来分别实现View的透明度渐变、收缩、移动和旋转等动画效果，那在此之前我们也来总结下使用ObjectAnimator实现动画的几个步骤，如下：
+1.通过调用ofFloat()、ofInt()等方法创建ObjectAnimator对象，并设置目标对象、需要改变的目标属性名、初始值和结束值；
+2.设置动画的持续时间、是否重复及重复次数等属性；
+3.启动动画。
+我们发现使用ObjectAnimator实现动画比ValueAnimator更加简单和方便，下面分别是我们实例中使用ObjectAnimator实现透明度渐变、伸缩、移动和旋转的代码(具体代码在文章末尾提供下)，如下:
+---------------------
+作者：Joey_Leaf
+来源：CSDN
+原文：https://blog.csdn.net/yegongheng/article/details/38435553
+版权声明：本文为博主原创文章，转载请附上博文链接！"/>
+
+    <View
+        android:id="@+id/picTop"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#565454" />
+</android.support.constraint.ConstraintLayout>
