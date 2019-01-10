@@ -9,7 +9,7 @@
         android:id="@+id/page_content"
         android:layout_width="100dp"
         android:layout_height="100dp"
-        android:background="#565454"
+        android:background="@color/grey"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

@@ -13,6 +13,8 @@ public class BookOpenViewValue {
     private float y;
     private float sX;
     private float sY;
+    private float PivotX;
+    private float PivotY;
 
     public BookOpenViewValue(){}
 
@@ -23,6 +25,21 @@ public class BookOpenViewValue {
         this.bottom = bottom;
     }
 
+    public void setPivotX(float pivotX) {
+        PivotX = pivotX;
+    }
+
+    public void setPivotY(float pivotY) {
+        PivotY = pivotY;
+    }
+
+    public float getPivotX() {
+        return PivotX;
+    }
+
+    public float getPivotY() {
+        return PivotY;
+    }
 
     public int getRight() {
         return right;
